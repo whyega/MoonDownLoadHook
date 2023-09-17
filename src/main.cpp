@@ -23,8 +23,7 @@ HMODULE __stdcall LoadLibraryAHooked(const decltype(LoadLibraryAHook)& hook, LPC
     if (libraryHandle == NULL)
         return libraryHandle;
        
-    if (strcmp(lpLibFileName, "MoonLoader.asi") == 0) {  
-        MessageBoxA(NULL, lpLibFileName, "LOAD", MB_OK);      
+    if (strcmp(lpLibFileName, "MoonLoader.asi") == 0) {               
         setURLDownloadToFileAHook(libraryHandle); 
         LoadLibraryAHook.remove();                        
     }
